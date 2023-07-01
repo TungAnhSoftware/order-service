@@ -14,5 +14,5 @@ import java.util.List;
 public class OrderResp {
     private int id;
     private String orderNumber;
-    private List<OrderItemDto> orderItemList;
+    private List<OrderLineItemsDto> orderItemList;
 }

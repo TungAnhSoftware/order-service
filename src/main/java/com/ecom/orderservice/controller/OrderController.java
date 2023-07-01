@@ -1,6 +1,6 @@
 package com.ecom.orderservice.controller;
 
-import com.ecom.orderservice.dto.OrderReq;
+import com.ecom.orderservice.dto.OrderRequest;
 import com.ecom.orderservice.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -18,9 +18,9 @@ public class OrderController {
 
     @PostMapping(path = "/placeOrder")
     @ResponseStatus(HttpStatus.CREATED)
-    public String placeOrder(@RequestBody OrderReq orderReq) {
-        logger.info("Received Request createSmartPhone");
-        orderService.placeOrder(orderReq);
+    public String placeOrder(@RequestBody OrderRequest orderRequest) {
+        logger.info("Received Request: " + orderRequest);
+        orderService.placeOrder(orderRequest);
         return "Order Placed Successfully";
     }
 
